@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+require_relative '../lib/environment'
+
+app = CLI.new
+app.run
