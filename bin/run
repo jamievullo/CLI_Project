@@ -2,5 +2,11 @@
 
 require_relative '../lib/environment'
 
-app = CLI.new
-app.run
+# app = CLI.new
+# app.run
+
+CLI.new.hello
+
+require "irb"
+IRB.start(__FILE__)
+
