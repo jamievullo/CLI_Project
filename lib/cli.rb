@@ -5,4 +5,3 @@ class CLI
   end
   
 end
-    

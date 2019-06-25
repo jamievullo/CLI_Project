@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ruby
 
 require_relative '../lib/environment'
 
-# app = CLI.new
-# app.run
-
 CLI.new.hello
+#app.run
 
-require "irb"
-IRB.start(__FILE__)
+#CLI.new.hello
+
+#require "irb"
+#IRB.start(__FILE__)
 
