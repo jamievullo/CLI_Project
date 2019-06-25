@@ -1,29 +1,29 @@
 class Scraper
   
-  require 'nokogiri'
-require 'open-uri'
+ 
 
 
-site = "https://en.wikipedia.org/wiki/UFO_sightings_in_the_United_States"
+  site = "https://en.wikipedia.org/wiki/UFO_sightings_in_the_United_States"
 
 
-page = Nokogiri::HTML(open(site))
- #puts page #|| 'nope'
-results = page.css(".nowrap")
-#puts results.count
+  page = Nokogiri::HTML(open(site))
+     #puts page #|| 'nope'
+  results = page.css(".nowrap")
 
-results.each.with_index(1) do |r, index|
-  puts "#{index} - #{r.text}"
-end
+  #puts results.count
 
-# root =
-# url =
+  results.each.with_index(1) do |r, index|
+    puts "#{index} - #{r.text}"
+  end
 
-# showpage = Nokogiri::HTML(open(""))
+  # root =
+  # url =
 
-# title
+  # showpage = Nokogiri::HTML(open(""))
 
+  # title
 
-"Finished Running Code"
+  
+  "Finished Running Code"
   
 end
