@@ -8,5 +8,5 @@ require_relative '../lib/environment'
 Scraper.aliens
 
 require "irb"
-IRB.start(__FILE__)
+#IRB.start(__FILE__)
 

@@ -21,11 +21,11 @@ class Scraper
         state = row_data[2].text
         name = row_data[3].text
         description = row_data[4].text
-        binding.pry 
-        #sightings_array << Sighting.new(date, city, state, name, description)
+       # binding.pry 
+        sightings_array << Sighting.new(date, city, state, name, description)
       end
     end
-    sightings_array
+    print sightings_array
   end
 end
 
