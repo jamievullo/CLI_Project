@@ -22,7 +22,7 @@ class Scraper
         state = object.css("td")[2].text
         name = object.css("td")[3].text
         description = object.css("td")[4].text
-      # binding.pry
+       #binding.pry
         sightings_array << Sighting.new(date, city, state, name, description)
       else 
         
