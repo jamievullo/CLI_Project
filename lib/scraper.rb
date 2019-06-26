@@ -1,3 +1,5 @@
+require 'pry'
+
 class Scraper
   
  
@@ -7,14 +9,24 @@ class Scraper
 
 
   page = Nokogiri::HTML(open(site))
-     #puts page #|| 'nope'
-  results = page.css(".nowrap")
+     
+  results = page.css("tr")
+  
+  results.each do |obj|
+    date = obj.css("td")[0].text
+    location = obj.css("td")[1].text
+    state = obj.css("td")[2].text
+    name = obj.css("td")[3].text
+    description = obj.css("td")[4].text
+    binding.pry
 
-  #puts results.count
+  puts results.count
+end
+end
 
-  results.each.with_index(1) do |r, index|
-    puts "#{index} - #{r.text}"
-  end
+  # results.each.with_index(1) do |r, index|
+  #   puts "#{index} - #{r.text}"
+  # end
 
   # root =
   # url =
