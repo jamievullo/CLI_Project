@@ -14,20 +14,16 @@ class Scraper
     results = page.css("tr")
   
     results.each do |object|
-     # binding.pry 
-      #if object.css("td").empty? == false 
-      if object.css("td")[0] != nil
-        date = object.css("td")[0].text
-        city = object.css("td")[1].text
-        state = object.css("td")[2].text
-        name = object.css("td")[3].text
-        description = object.css("td")[4].text
-       #binding.pry
-        sightings_array << Sighting.new(date, city, state, name, description)
-        binding.pry
-      else 
-        
-       end
+    row_data = object.css('td')
+      if row_data[0] != nil && row_data[1] != nil && row_data[3] != nil
+        date = row_data[0].text
+        city = row_data[1].text
+        state = row_data[2].text
+        name = row_data[3].text
+        description = row_data[4].text
+        binding.pry 
+        #sightings_array << Sighting.new(date, city, state, name, description)
+      end
     end
     sightings_array
   end
