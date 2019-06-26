@@ -24,6 +24,7 @@ class Scraper
         description = object.css("td")[4].text
        #binding.pry
         sightings_array << Sighting.new(date, city, state, name, description)
+        binding.pry
       else 
         
        end
