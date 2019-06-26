@@ -11,4 +11,5 @@ end
 
 require_relative './cli'
 require_relative './scraper'
+require_relative './sightings'
 

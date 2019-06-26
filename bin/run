@@ -5,8 +5,8 @@ require_relative '../lib/environment'
 #CLI.new.hello            #test for run functionality
 #app.run
 
+Scraper.aliens
 
-
-#require "irb"
-#IRB.start(__FILE__)
+require "irb"
+IRB.start(__FILE__)
 

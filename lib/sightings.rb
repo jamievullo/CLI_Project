@@ -11,7 +11,6 @@ class Sighting
     @name = name
     @description = description
     @@all << self
-    
   end
     
   
