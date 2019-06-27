@@ -40,7 +40,7 @@ class CLI
         sleep +3
         puts "\nWhat would you like to do?" 
         puts "Enter 'list dates', 'list cities', or 'exit'"
-        input = gets.chomp #strip?
+        input = gets.chomp 
         
         case input
         when 'list dates'
@@ -54,7 +54,8 @@ class CLI
     end
   end    
   
-  # #Going to need a Dates class and a Cities class
+  # #Going to need a Dates class and a Cities class??
+  #Maybe don't need to sort the dates??
   # def list_dates
   #   Dates.all.sort_by(&:name).each.with_index(1) do |dates, index|
   #     puts "#{index}. #{dates.name}"
