@@ -10,7 +10,7 @@ https://ruby-doc.org/
 https://en.wikipedia.org/wiki/The_X-Files #fun stuff about UFO's and the show in general
 https://upload.wikimedia.org/wikipedia/en/transcoded/b/bf/X-Files_Theme.ogg/X-Files_Theme.ogg.mp3 
 #have to check the possibilities of having this run on a loop during program usage if there is time
-
+https://stackoverflow.com/questions/4928625/just-for-fun-how-do-i-write-a-ruby-program-that-slowly-prints-to-stdout-one-cha
 
 
 
