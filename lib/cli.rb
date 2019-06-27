@@ -28,7 +28,7 @@ class CLI
         sleep +2.5
         puts  "just within the United States."
         sleep +4
-        #puts "The truth is out there"
+        
         "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.20}
         sleep +3
         puts ""
