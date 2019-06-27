@@ -44,7 +44,7 @@ class CLI
           self.list_cities
         
         else
-          "Please type in a valid request please"
+          "Please type in a valid request"
       end
         
     end
