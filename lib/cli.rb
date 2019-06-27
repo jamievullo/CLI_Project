@@ -6,7 +6,6 @@ class CLI
     def call 
       input = ""
       while input != "exit"
-        #Definitely want to add a speed element here for the welcome message.
         
        "I  Want  to  Believe!!".split("").each {|c| putc c ; sleep 0.20}
         sleep +3
@@ -47,6 +46,8 @@ class CLI
           self.list_dates
         when 'list cities'
           self.list_cities
+        when 'exit'
+        puts "Thank you!"
         else
           "Please type in a valid request"
       end
@@ -54,7 +55,7 @@ class CLI
     end
   end    
   
-  # #Going to need a Dates class and a Cities class??
+  
   #Maybe don't need to sort the dates??
   # def list_dates
   #   Dates.all.sort_by(&:name).each.with_index(1) do |dates, index|
