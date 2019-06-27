@@ -1,10 +1,16 @@
-HELLO WORLD
 
-# CLIProject
+# CLIProject-051319 part-time cohort-Jamie Vullo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CLI_Project`. To experiment with that code, run `bin/console` for an interactive prompt.
+ To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+List of used resources and websites. 
+https://en.wikipedia.org/wiki/List_of_reported_UFO_sightings
+https://en.wikipedia.org/wiki/UFO_sightings_in_the_United_States
+https://ruby-doc.org/
+
+
+
+
 
 ## Installation
 
