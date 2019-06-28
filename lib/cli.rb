@@ -59,12 +59,14 @@ class CLI
   
  
   def display_dates
+        #want to iterate over the sightings_array for the dates and display when called
     Scraper.scrape_ufo_info.all.sort_by(&:name).each.with_index(1) do |dates, index|
       puts "#{index}. #{dates.name}"
     end
   end
   
   def display_cities
+        #want to iterate over the sightings_array for the cities and display when called
     Scraper.scrape_ufo_info.all.sort_by(&:name).each.with_index(1) do |cities, index|
       puts "#{index}. #{cities.name}"
     end 
