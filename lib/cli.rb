@@ -1,6 +1,5 @@
 class CLI 
   
- 
     def run 
       call 
       display_dates
@@ -55,19 +54,18 @@ class CLI
         else
           "Please type in a valid request"
       end
-        
     end
   end    
   
  
   def display_dates
-    Scraper.all.sort_by(&:name).each.with_index(1) do |dates, index|
+    Scraper.scrape_ufo_info.all.sort_by(&:name).each.with_index(1) do |dates, index|
       puts "#{index}. #{dates.name}"
     end
   end
   
   def display_cities
-    Scraper.all.sort_by(&:name).each.with_index(1) do |cities, index|
+    Scraper.scrape_ufo_info.all.sort_by(&:name).each.with_index(1) do |cities, index|
       puts "#{index}. #{cities.name}"
     end 
   end
