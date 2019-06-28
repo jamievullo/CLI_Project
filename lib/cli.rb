@@ -1,7 +1,11 @@
 class CLI 
   
  
-  # the city, state, event name, and description of the event along with an option to go back to the list of dates/cities to check out  other events as well.
+    def run 
+      call 
+      display_dates
+      display_cities
+    end
   
     def call 
       input = ""
@@ -43,11 +47,11 @@ class CLI
         
         case input
         when 'list dates'
-          self.list_dates
+          self.display_dates
         when 'list cities'
-          self.list_cities
+          self.display_cities
         when 'exit'
-        puts "Thank you!"
+          puts "Thank you!"
         else
           "Please type in a valid request"
       end
@@ -55,19 +59,16 @@ class CLI
     end
   end    
   
+ 
+  def display_dates
+    Scraper.all.sort_by(&:name).each.with_index(1) do |dates, index|
+      puts "#{index}. #{dates.name}"
+    end
+  end
   
-  #Maybe don't need to sort the dates??
-  # def list_dates
-  #   Dates.all.sort_by(&:name).each.with_index(1) do |dates, index|
-  #     puts "#{index}. #{dates.name}"
-  #   end
-  # end
-  
-  # def list_cities
-  #   Cities.all.sort_by(&:name).each.with_index(1) do |cities, index|
-  #     puts "#{index}. #{cities.name}"
-  #   end 
-  # end
-  
-  
+  def display_cities
+    Scraper.all.sort_by(&:name).each.with_index(1) do |cities, index|
+      puts "#{index}. #{cities.name}"
+    end 
+  end
 end
