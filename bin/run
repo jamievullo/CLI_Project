@@ -5,7 +5,7 @@ require_relative '../lib/environment'
 #CLI.new.hello            #test for run functionality
 #app.run
 
-Scraper.aliens
+Scraper.scrape_ufo_info
 #CLI.call
 
 require "irb"

@@ -3,7 +3,7 @@
 class Scraper
   
   
-  def self.aliens
+  def self.scrape_ufo_info
     
     sightings_array = []
   
