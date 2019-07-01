@@ -3,13 +3,14 @@ require "pry"
 class CLI 
 
   def initialize 
-    # intro
-    # menu
+    intro
     Scraper.new.scrape_ufo_info
-    list_dates
+    list_names
+    menu
   end
 
   def intro
+    puts ""
     "I  Want  to  Believe!!".split("").each {|c| putc c ; sleep 0.20}
     sleep +3
     puts "\n\nUFO sightings are a worldwide phenomenon"
@@ -35,7 +36,7 @@ class CLI
     list_dates
   end 
 
-  def list_dates
+  def list_names
     #binding.pry
     Sighting.all.each.with_index(1) do |sighting, index| 
       
@@ -58,13 +59,15 @@ class CLI
       input = gets.chomp.downcase
       
       if input.to_i > 0
-        puts Sighting.all.each do [input.to_i - 1] #needs work 
+        puts Sighting.all.each do [input.to_i - 1] 
+        end #needs work 
       elsif 
         input == "exit"
         goodbye
       else
         puts "Please type in a valid request"
       end
+   
     end 
   end 
 
