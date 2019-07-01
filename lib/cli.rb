@@ -44,8 +44,8 @@ class CLI
   def menu 
     input = nil
     while input != "exit"
-      puts "\nTo get additional details about the City listed," 
-      puts "please enter number of that city."
+      puts "\nTo get additional details about the Event listed," 
+      puts "please enter number of that event."
       puts "To quit this program, type 'exit'."
       puts "\nWhat would you like to do?"
       puts "\nEnter number or 'exit'"
