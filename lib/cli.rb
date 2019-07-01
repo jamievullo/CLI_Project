@@ -59,7 +59,7 @@ class CLI
         input == "exit"
         goodbye
       else
-        puts "Please type in a valid request"
+        puts "Please enter a valid request"
       end
    
     end 
