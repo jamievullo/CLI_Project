@@ -3,7 +3,7 @@ require "pry"
 class CLI 
 
   def initialize 
-    intro
+    #intro
     Scraper.new.scrape_ufo_info
     list_names
     menu
@@ -46,7 +46,7 @@ class CLI
     while input != "exit"
       puts "\nTo get additional details about the Event listed," 
       puts "please enter number of that event."
-      puts "To quit this program, type 'exit'."
+      puts "\nTo quit this program, type 'exit'."
       puts "\nWhat would you like to do?"
       puts "\nEnter number or 'exit'"
       
