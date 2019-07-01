@@ -58,7 +58,7 @@ class CLI
       input = gets.chomp.downcase
       
       if input.to_i > 0
-        puts @cities[input.to_i - 1]
+        puts Sighting.all.each do [input.to_i - 1] #needs work 
       elsif 
         input == "exit"
         goodbye
