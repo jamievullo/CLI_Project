@@ -33,7 +33,6 @@ class CLI
     sleep +4
     "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.20}
     sleep +3
-    list_dates
   end 
 
   def list_names
