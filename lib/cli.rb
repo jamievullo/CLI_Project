@@ -36,21 +36,16 @@ class CLI
   end 
 
   def list_names
-    #binding.pry
     Sighting.all.each.with_index(1) do |sighting, index| 
-      
-       puts "#{index}. #{sighting.name}"
-  #Sighting.all.each { |sighting| puts sighting.date}
-    
-   end
-     
-    
+    puts "#{index}. #{sighting.name}"
+    end
   end
   
   def menu 
     input = nil
     while input != "exit"
-      puts "\nTo get additional details about the City listed, please enter number of that city."
+      puts "\nTo get additional details about the City listed," 
+      puts "please enter number of that city."
       puts "To quit this program, type 'exit'."
       puts "\nWhat would you like to do?"
       puts "\nEnter number or 'exit'"
