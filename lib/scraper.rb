@@ -3,9 +3,9 @@
 class Scraper
   
   
-  def self.scrape_ufo_info
+  def scrape_ufo_info
     
-    sightings_array = []
+    #sightings_array = []
   
     site = "https://en.wikipedia.org/wiki/UFO_sightings_in_the_United_States"
   
@@ -22,10 +22,11 @@ class Scraper
         name = row_data[3].text
         description = row_data[4].text
        # binding.pry 
-        sightings_array << Sighting.new(date, city, state, name, description)
+        Sighting.new(date, city, state, name, description)
       end
     end
-    print sightings_array
+    #print sightings_array
+    #print Sighting.all
   end
 end
 
