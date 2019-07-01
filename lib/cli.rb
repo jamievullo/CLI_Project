@@ -53,8 +53,12 @@ class CLI
       input = gets.chomp.downcase
       
       if input.to_i > 0
-        puts Sighting.all.each do [input.to_i - 1] 
-        end #needs work 
+        Sighting.all.each do |sighting| 
+          puts "#{sighting.date}, #{sighting.city}, #{sighting.state}, #{sighting.description}"
+          #puts name[input.to_i - 1] 
+        
+        end #needs work
+        binding.pry
       elsif 
         input == "exit"
         goodbye
