@@ -52,13 +52,16 @@ class CLI
       
       input = gets.chomp.downcase
       
-      if input.to_i > 0
-        Sighting.all.each do |sighting| 
-          puts "#{sighting.date}, #{sighting.city}, #{sighting.state}, #{sighting.description}"
-          #puts name[input.to_i - 1] 
+      if input.to_i.between?(1, Sighting.all.size) #> 0
         
-        end #needs work
-        binding.pry
+        Sighting.all.each do |sighting|
+        sighting = Sighting.find(input)
+        
+        puts "#{sighting.date} -#{sighting.city} -#{sighting.state} -#{sighting.description}"
+          
+        #puts name[input.to_i - 1] 
+        end 
+        #binding.pry
       elsif 
         input == "exit"
         goodbye

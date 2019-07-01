@@ -17,4 +17,8 @@ class Sighting
     @@all 
   end 
   
+  def self.find(info)
+    self.all[info.to_i - 1]
+  end
+  
 end
