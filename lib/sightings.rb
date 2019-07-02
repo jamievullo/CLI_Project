@@ -17,8 +17,10 @@ class Sighting
     @@all 
   end 
   
-  def self.find(info)
+  def self.find_date(info)
     self.all[info.to_i - 1]
   end
+  
+   
   
 end

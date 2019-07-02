@@ -5,7 +5,7 @@ class CLI
   def initialize 
     #intro
     Scraper.new.scrape_ufo_info
-    list_names
+    list_date
     menu
   end
 
@@ -35,9 +35,9 @@ class CLI
     sleep +3
   end 
 
-  def list_names
+  def list_date
     Sighting.all.each.with_index(1) do |sighting, index| 
-    puts "#{index}. #{sighting.name}"
+    puts "#{index}. #{sighting.date}"
     end
   end
   
@@ -52,13 +52,12 @@ class CLI
       
       input = gets.chomp.downcase
       
-      if input.to_i.between?(1, Sighting.all.size) #> 0
+      if input.to_i.between?(1, Sighting.all.size)
         
-        Sighting.all.each do |sighting|
-        sighting = Sighting.find(input)
+        sighting_date = Sighting.find_date(input)
         
-        puts "#{sighting.date} -#{sighting.city} -#{sighting.state} -#{sighting.description}"
-        end 
+        puts "#{sighting_date.date} -#{sighting_date.city} -#{sighting_date.state} -#{sighting_date.description}"
+         
         #binding.pry
       elsif 
         input == "exit"
