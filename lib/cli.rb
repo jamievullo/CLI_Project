@@ -3,7 +3,7 @@ require "pry"
 class CLI 
 
   def initialize 
-    #intro
+    intro
     Scraper.new.scrape_ufo_info
     list_date
     menu
@@ -24,15 +24,15 @@ class CLI
     puts  "that 'fiery disks' were encountered floating over the skies." 
     sleep +2.5
     puts  "\nThroughout the ages people have reported and documented these occurrences" 
-    sleep +2.7
+    sleep +3
     puts  "and this is just a small sampling of them." 
-    sleep +4
+    sleep +2.5
     puts  "\nThe following is a list of UFO sightings"
     sleep +2.5
     puts  "just within the United States."
     sleep +4
     "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.20}
-    sleep +3
+    sleep +1.5
   end 
 
   def list_date
@@ -44,8 +44,8 @@ class CLI
   def menu 
     input = nil
     while input != "exit"
-      puts "\n-To get additional details about the Event listed," 
-      puts "please enter number of that event."
+      puts "\n-To get additional details of the Date listed," 
+      puts "please enter number next to that date."
       puts "-To quit this program, type 'exit'."
       puts "-What would you like to do?"
       puts "-Enter number or 'exit'"
@@ -53,12 +53,8 @@ class CLI
       input = gets.chomp.downcase
       
       if input.to_i.between?(1, Sighting.all.size)
-        
         sighting_date = Sighting.find_date(input)
-        
         puts "#{sighting_date.date} -#{sighting_date.city} -#{sighting_date.state} -#{sighting_date.description}"
-         
-        #binding.pry
       elsif 
         input == "exit"
         goodbye
@@ -67,9 +63,8 @@ class CLI
       end
     end 
   end 
-
+  
   def goodbye 
     puts "Until next time, goodbye."
   end 
-
 end 
