@@ -19,7 +19,6 @@ class Sighting
   end 
   
   def self.find_date(user_input)
-    binding.pry 
     self.all[user_input.to_i - 1]
   end
   
