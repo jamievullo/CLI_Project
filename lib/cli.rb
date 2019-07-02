@@ -44,11 +44,11 @@ class CLI
   def menu 
     input = nil
     while input != "exit"
-      puts "\nTo get additional details about the Event listed," 
+      puts "\n-To get additional details about the Event listed," 
       puts "please enter number of that event."
-      puts "\nTo quit this program, type 'exit'."
-      puts "\nWhat would you like to do?"
-      puts "\nEnter number or 'exit'"
+      puts "-To quit this program, type 'exit'."
+      puts "-What would you like to do?"
+      puts "-Enter number or 'exit'"
       
       input = gets.chomp.downcase
       
