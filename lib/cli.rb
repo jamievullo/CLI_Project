@@ -1,5 +1,3 @@
-require "pry"
-
 class CLI 
 
   def initialize 
@@ -55,7 +53,6 @@ class CLI
       if input.to_i.between?(1, Sighting.all.size)
         event = Sighting.find_date(input)
         "#{event.date} -#{event.city} -#{event.state} -#{event.description}".split("").each {|c| putc c ; sleep 0.035}
-       
       elsif 
         input == "exit"
         goodbye

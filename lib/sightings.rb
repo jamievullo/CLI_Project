@@ -1,4 +1,3 @@
-require "pry"
 class Sighting
   
   attr_accessor :date, :city, :state, :name, :description
