@@ -53,8 +53,8 @@ class CLI
       input = gets.chomp.downcase
       
       if input.to_i.between?(1, Sighting.all.size)
-        sighting_date = Sighting.find_date(input)
-        puts "#{sighting_date.date} -#{sighting_date.city} -#{sighting_date.state} -#{sighting_date.description}"
+        event = Sighting.find_date(input)
+        puts "#{event.date} -#{event.city} -#{event.state} -#{event.description}"
       elsif 
         input == "exit"
         goodbye
