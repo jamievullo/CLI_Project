@@ -3,9 +3,9 @@ require "pry"
 class CLI 
 
   def initialize 
-    intro
+    #intro
     Scraper.new.scrape_ufo_info
-    list_date
+    list_dates
     menu
   end
 
@@ -35,7 +35,7 @@ class CLI
     sleep +1.5
   end 
 
-  def list_date
+  def list_dates
     Sighting.all.each.with_index(1) do |sighting, index| 
     puts "#{index}. #{sighting.date}"
     end
