@@ -58,8 +58,6 @@ class CLI
         sighting = Sighting.find(input)
         
         puts "#{sighting.date} -#{sighting.city} -#{sighting.state} -#{sighting.description}"
-          
-        #puts name[input.to_i - 1] 
         end 
         #binding.pry
       elsif 
@@ -68,7 +66,6 @@ class CLI
       else
         puts "Please enter a valid request"
       end
-   
     end 
   end 
 
