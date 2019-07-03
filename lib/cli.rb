@@ -69,7 +69,7 @@ class CLI
   end 
   
   def goodbye 
-    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.02}
+    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.04}
     puts ""
     "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.15}
     sleep +1
