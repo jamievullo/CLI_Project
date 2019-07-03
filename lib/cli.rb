@@ -1,7 +1,7 @@
 class CLI 
 
   def initialize 
-    #intro
+    intro
     Scraper.new.scrape_ufo_info
     list_dates
     menu
@@ -9,7 +9,7 @@ class CLI
 
   def intro
     puts ""
-    "I  Want  to  Believe!!".split("").each {|c| putc c ; sleep 0.20}
+    "I  Want  to  Believe!!".split("").each {|c| putc c ; sleep 0.15}
     sleep +3
     puts "\n\nUFO sightings are a worldwide phenomenon"
     sleep +2.5 
@@ -19,18 +19,19 @@ class CLI
     sleep +2.5
     puts  "the scribes of the pharaoh Thutmose III reported" 
     sleep +2.5
-    puts  "that 'fiery disks' were encountered floating over the skies." 
+    puts  "that 'fiery disks' were encountered floating over their skies." 
     sleep +2.5
     puts  "\nThroughout the ages people have reported and documented these occurrences" 
     sleep +3
-    puts  "and this is just a small sampling of them." 
+    puts  "and this is just a sampling of them." 
     sleep +2.5
-    puts  "\nThe following is a list of UFO sightings"
+    puts  "\nThe following is a small list of UFO sightings"
     sleep +2.5
     puts  "just within the United States."
+    sleep +1
+    puts "\nLoading Dates"
     sleep +4
-    "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.20}
-    sleep +1.5
+    puts ""
   end 
 
   def list_dates
@@ -68,7 +69,10 @@ class CLI
   end 
   
   def goodbye 
-    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.05}
+    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.02}
+    puts ""
+    "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.15}
+    sleep +1
     puts ""
   end 
 end 
