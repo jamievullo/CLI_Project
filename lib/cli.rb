@@ -48,7 +48,7 @@ class CLI
       puts "-What would you like to do?"
       puts "-Enter number or 'exit'"
       
-      input = gets.chomp.downcase
+      input = gets.strip.downcase
       
       if input.to_i.between?(1, Sighting.all.size)
         event = Sighting.find_date(input)

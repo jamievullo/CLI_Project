@@ -19,10 +19,13 @@ class Scraper
         state = row_data[2].text
         name = row_data[3].text
         description = row_data[4].text
-       # binding.pry 
+        unless Sighting.all.count >= 42 
         Sighting.new(date, city, state, name, description)
+        end
       end
     end
+    #binding.pry
+    
     #print sightings_array
     #print Sighting.all
   end
