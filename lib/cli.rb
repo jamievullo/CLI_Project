@@ -1,7 +1,7 @@
 class CLI 
 
   def initialize 
-    intro
+    #intro
     Scraper.new.scrape_ufo_info
     list_dates
     menu
@@ -69,7 +69,7 @@ class CLI
   end 
   
   def goodbye 
-    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.04}
+    "\nUntil next time.....".split("").each {|c| putc c ; sleep 0.05}
     puts ""
     "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.15}
     sleep +1
