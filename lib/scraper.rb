@@ -2,8 +2,6 @@ class Scraper
   
   
   def scrape_ufo_info
-    
-    #sightings_array = []
   
     site = "https://en.wikipedia.org/wiki/UFO_sightings_in_the_United_States"
   
@@ -19,15 +17,12 @@ class Scraper
         state = row_data[2].text
         name = row_data[3].text
         description = row_data[4].text
+        
         unless Sighting.all.count >= 42 
         Sighting.new(date, city, state, name, description)
         end
       end
     end
-    #binding.pry
-    
-    #print sightings_array
-    #print Sighting.all
   end
 end
 

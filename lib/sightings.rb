@@ -20,7 +20,5 @@ class Sighting
   def self.find_date(user_input)
     self.all[user_input.to_i - 1]
   end
-  
-   
-  
+
 end

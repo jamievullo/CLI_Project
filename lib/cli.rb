@@ -53,6 +53,7 @@ class CLI
       if input.to_i.between?(1, Sighting.all.size)
         event = Sighting.find_date(input)
         "#{event.date} -#{event.city} -#{event.state} -#{event.description}".split("").each {|c| putc c ; sleep 0.035}
+        #list_dates
       elsif 
         input == "exit"
         goodbye
@@ -63,6 +64,7 @@ class CLI
   end 
   
   def goodbye 
-    puts "Until next time, goodbye."
+    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.07}
+    puts ""
   end 
 end 
