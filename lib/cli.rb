@@ -42,29 +42,33 @@ class CLI
   def menu 
     input = nil
     while input != "exit"
-      puts "\n-To get additional details of the Date listed," 
-      puts "please enter number next to that date."
-      puts "-To quit this program, type 'exit'."
-      puts "-What would you like to do?"
-      puts "-Enter number or 'exit'"
+      puts "\n- To get additional details on any Date listed,"
+      puts "please enter number of that date."
+      puts "- To quit this program, type 'exit'."
+      puts "- What would you like to do?"
+      puts "- Enter number or 'exit'"
       
       input = gets.strip.downcase
       
       if input.to_i.between?(1, Sighting.all.size)
         event = Sighting.find_date(input)
         "#{event.date} -#{event.city} -#{event.state} -#{event.description}".split("").each {|c| putc c ; sleep 0.035}
-        #list_dates
+        sleep 3 
+        list_dates
       elsif 
         input == "exit"
         goodbye
       else
-        puts "Please enter a valid request"
+        "Please enter a valid request".split("").each {|c| putc c ; sleep 0.035}
+        puts ""
+        sleep 1 
+        list_dates
       end
     end 
   end 
   
   def goodbye 
-    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.07}
+    "\nUntil next time, goodbye.".split("").each {|c| putc c ; sleep 0.05}
     puts ""
   end 
 end 
