@@ -1,4 +1,4 @@
-class Sighting
+class UfoSightingsGem::Sighting
   
   attr_accessor :date, :city, :state, :name, :description
   

@@ -3,7 +3,7 @@
 require_relative '../lib/environment'
 
 
-CLI.new
+UfoSightingsGem::CLI.new
 
 require "irb"
 #IRB.start(__FILE__)

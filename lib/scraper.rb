@@ -1,4 +1,4 @@
-class Scraper
+class UfoSightingsGem::Scraper
   
   
   def scrape_ufo_info
@@ -18,8 +18,8 @@ class Scraper
         name = row_data[3].text
         description = row_data[4].text
         
-        unless Sighting.all.count >= 42 
-        Sighting.new(date, city, state, name, description)
+        unless UfoSightingsGem::Sighting.all.count >= 42 
+        UfoSightingsGem::Sighting.new(date, city, state, name, description)
         end
       end
     end

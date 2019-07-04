@@ -1,8 +1,8 @@
-class CLI 
+class UfoSightingsGem::CLI 
 
   def initialize 
     #intro
-    Scraper.new.scrape_ufo_info
+    UfoSightingsGem::Scraper.new.scrape_ufo_info
     list_dates
     menu
   end
@@ -35,7 +35,7 @@ class CLI
   end 
 
   def list_dates
-    Sighting.all.each.with_index(1) do |sighting, index| 
+    UfoSightingsGem::Sighting.all.each.with_index(1) do |sighting, index| 
     puts "#{index}. #{sighting.date}"
     end
   end
@@ -51,8 +51,8 @@ class CLI
       
       input = gets.strip.downcase
       
-      if input.to_i.between?(1, Sighting.all.size)
-        event = Sighting.find_date(input)
+      if input.to_i.between?(1, UfoSightingsGem::Sighting.all.size)
+        event = UfoSightingsGem::Sighting.find_date(input)
         "#{event.date} -#{event.city} -#{event.state} -#{event.description}".split("").each {|c| putc c ; sleep 0.035}
         sleep 3 
         list_dates
