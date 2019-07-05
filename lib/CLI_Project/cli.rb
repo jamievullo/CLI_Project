@@ -1,7 +1,7 @@
 class UfoSightingsGem::CLI 
 
   def initialize 
-    #intro
+    intro
     UfoSightingsGem::Scraper.new.scrape_ufo_info
     list_dates
     menu
@@ -23,20 +23,20 @@ class UfoSightingsGem::CLI
     sleep +2.5
     puts  "\nThroughout the ages people have reported and documented these occurrences" 
     sleep +3
-    puts  "and this is just a sampling of them." 
+    puts  "and this is a sampling of them." 
     sleep +2.5
     puts  "\nThe following is a small list of UFO sightings"
     sleep +2.5
     puts  "just within the United States."
     sleep +1
     puts "\nLoading Dates"
-    sleep +4
+    sleep +3.2
     puts ""
   end 
 
   def list_dates
     UfoSightingsGem::Sighting.all.each.with_index(1) do |sighting, index| 
-    puts "#{index}. #{sighting.date}"
+    "#{index}. #{sighting.date}".split("").each {|c| putc c ; sleep 0.005}
     end
   end
   
@@ -44,23 +44,23 @@ class UfoSightingsGem::CLI
     input = nil
     while input != "exit"
       puts "\n- To get additional details on any Date listed,"
-      puts "please enter number of that date."
+      puts "  please enter number of that date."
       puts "- To quit this program, type 'exit'."
       puts "- What would you like to do?"
-      puts "- Enter number or 'exit'"
+      puts "- Please enter number or 'exit'"
       
       input = gets.strip.downcase
       
       if input.to_i.between?(1, UfoSightingsGem::Sighting.all.size)
         event = UfoSightingsGem::Sighting.find_date(input)
-        "#{event.date} -#{event.city} -#{event.state} -#{event.description}".split("").each {|c| putc c ; sleep 0.035}
+        "Date - #{event.date}City - #{event.city}State - #{event.state}Description - #{event.description}".split("").each {|c| putc c ; sleep 0.03}
         sleep 3 
         list_dates
       elsif 
         input == "exit"
         goodbye
       else
-        "Please enter a valid request".split("").each {|c| putc c ; sleep 0.035}
+        "Please enter a valid request, reloading list...".split("").each {|c| putc c ; sleep 0.025}
         puts ""
         sleep 1 
         list_dates

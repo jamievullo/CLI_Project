@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Jamie Vullo'"]
   spec.email         = ["'jvullo@protonmail.com'"]
 
-  spec.summary       = %q{Changed to change}
-  spec.description   = %q{Changed to change}
+  spec.summary       = %q{Scraper designed to pull info from wiki page and produce user desired output}
+  spec.description   = %q{Scraper designed to pull info from wiki page and produce user desired output}
   spec.homepage      = "https://github.com/jamievullo/CLI_Project"
   spec.license       = "MIT"
 

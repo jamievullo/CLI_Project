@@ -10,7 +10,7 @@ require_relative "./CLI_Project/version"
 #   # Your code goes here...
 # end
 
-require_relative './cli'
-require_relative './scraper'
-require_relative './sightings'
+require_relative './CLI_Project/cli'
+require_relative './CLI_Project/scraper'
+require_relative './CLI_Project/sightings'
 
