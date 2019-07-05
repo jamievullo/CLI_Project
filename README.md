@@ -8,7 +8,7 @@ and delivers information based on what user selects.
 
 ## Technologies
 
-This application utilizes the Ruby language and 
+This application uses the Ruby language and 
 utilizes several Gems (listed)
 * Bundler Gem ~> 2.0
 * Rake Gem ~> 10.0
