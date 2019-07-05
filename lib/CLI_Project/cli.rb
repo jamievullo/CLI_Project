@@ -53,7 +53,7 @@ class UfoSightingsGem::CLI
       
       if input.to_i.between?(1, UfoSightingsGem::Sighting.all.size)
         event = UfoSightingsGem::Sighting.find_date(input)
-        "Date - #{event.date}City - #{event.city}State - #{event.state}Description - #{event.description}".split("").each {|c| putc c ; sleep 0.03}
+        "Date - #{event.date}City - #{event.city}State - #{event.state}Event Name - #{event.name}Description - #{event.description}".split("").each {|c| putc c ; sleep 0.03}
         sleep 3 
         list_dates
       elsif 
