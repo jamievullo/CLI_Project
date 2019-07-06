@@ -25,7 +25,7 @@ class UfoSightingsGem::CLI
     sleep +3
     puts  "and this is a sampling of them." 
     sleep +2.5
-    puts  "\nThe following is a small list of UFO sightings"
+    puts  "\nThe following is a very small list of UFO sightings"
     sleep +2.5
     puts  "just within the United States."
     sleep +1
