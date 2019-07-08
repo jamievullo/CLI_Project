@@ -1,6 +1,10 @@
 class UfoSightingsGem::CLI 
 
-  def initialize 
+  def initialize
+    run 
+  end
+  
+  def run  
     intro
     UfoSightingsGem::Scraper.new.scrape_ufo_info
     list_dates
@@ -75,5 +79,6 @@ class UfoSightingsGem::CLI
     "\nThe  Truth  is  out  there!".split("").each {|c| putc c ; sleep 0.15}
     sleep +1
     puts ""
+    exit
   end 
 end 
