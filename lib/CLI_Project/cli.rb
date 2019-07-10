@@ -5,7 +5,7 @@ class UfoSightingsGem::CLI
   end
   
   def run  
-    #intro
+    intro
     UfoSightingsGem::Scraper.new.scrape_ufo_info
     list_dates
     menu
