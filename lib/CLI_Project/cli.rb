@@ -40,7 +40,7 @@ class UfoSightingsGem::CLI
 
   def list_dates
     UfoSightingsGem::Sighting.all.each.with_index(1) do |sighting, index| 
-    "#{index}. #{sighting.date}".colorize(:yellow).bold.split("").each {|c| putc c ; sleep 0.005}
+    "#{index}. #{sighting.date}".colorize(:yellow).bold.split("").each {|c| putc c ; sleep 0.003}
     end
   end
   
