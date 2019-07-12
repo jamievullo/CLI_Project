@@ -1,7 +1,7 @@
 class UfoSightingsGem::Scraper
   
   
-  def scrape_ufo_info
+  def self.scrape_ufo_info
   
     site = "https://en.wikipedia.org/wiki/UFO_sightings_in_the_United_States"
   
@@ -18,9 +18,9 @@ class UfoSightingsGem::Scraper
         name = row_data[3].text
         description = row_data[4].text
         
-        unless UfoSightingsGem::Sighting.all.count >= 42 
-        UfoSightingsGem::Sighting.new(date, city, state, name, description)
-        end
+        UfoSightingsGem::Sighting.create(date, city, state, name, description) unless UfoSightingsGem::Sighting.all.count >= 42 
+          #UfoSightingsGem::Sighting.create(date, city, state, name, description)
+        #end
       end
     end
   end

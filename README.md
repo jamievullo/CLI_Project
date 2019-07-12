@@ -24,6 +24,7 @@ utilizes several Gems (listed)
 * cd CLI_Project/
 * gem install pry 
 * gem install nokogiri
+* gem install colorize
 * enter => bin/run
 
 ## Sources and Resources used

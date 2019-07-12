@@ -10,7 +10,16 @@ class UfoSightingsGem::Sighting
     @state = state
     @name = name
     @description = description
+    #@@all << self     #save method?
+  end
+  
+  def save
     @@all << self
+  end
+  
+  def self.create(date, city, state, name, description)
+    sighting = UfoSightingsGem::Sighting.new(date, city, state, name, description)
+    sighting.save
   end
   
   def self.all 
