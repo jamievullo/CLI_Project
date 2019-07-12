@@ -1,12 +1,7 @@
 class UfoSightingsGem::CLI 
 
-  # def initialize  #is this even necessary??
-  #   run 
-  # end
-  
   def run  
-    #intro
-    intro_short
+    intro
     UfoSightingsGem::Scraper.scrape_ufo_info
     list_dates
     menu
@@ -36,22 +31,6 @@ class UfoSightingsGem::CLI
     sleep +1
     puts "\nLoading Dates....".colorize(:yellow).bold
     sleep +3.2
-    puts ""
-  end 
-  
-  def intro_short
-    puts ""
-    puts "I  Want  to  Believe!!".colorize(:yellow).bold
-    puts "\n\nUFO sightings are a worldwide phenomenon".colorize(:yellow).bold
-    puts "and reports go back to as far as 1440 BC".colorize(:yellow).bold
-    puts  "where according to the Tulli Papyrus, in Ancient Egypt,".colorize(:yellow).bold
-    puts  "the scribes of the pharaoh Thutmose III reported".colorize(:yellow).bold 
-    puts  "that 'fiery disks' were encountered floating over their skies.".colorize(:yellow).bold 
-    puts  "\nThroughout the ages people have reported and documented these occurrences".colorize(:yellow).bold 
-    puts  "and this is a sampling of them.".colorize(:yellow).bold 
-    puts  "\nThe following is a very small list of UFO sightings".colorize(:yellow).bold
-    puts  "just within the United States.".colorize(:yellow).bold
-    puts "\nLoading Dates....".colorize(:yellow).bold
     puts ""
   end 
 
