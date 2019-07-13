@@ -22,9 +22,7 @@ utilizes several Gems (listed)
 * To run this program you must clone it from GitHub @JamieVullo/CLI_Project
   goto https://github.com/jamievullo/CLI_Project and clone into browser IDE 
 * cd CLI_Project/
-* gem install pry 
-* gem install nokogiri
-* gem install colorize
+* bundle install
 * enter => bin/run
 
 ## Sources and Resources used
