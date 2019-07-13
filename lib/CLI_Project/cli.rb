@@ -1,11 +1,11 @@
 class UfoSightingsGem::CLI 
 
   def run  
-    #intro
+    intro
     UfoSightingsGem::Scraper.scrape_ufo_info
     list_dates
     menu
-    user_input
+    input_parser
   end
 
   def intro
@@ -41,44 +41,6 @@ class UfoSightingsGem::CLI
     end
   end
   
-#   def menu 
-#     input = nil
-#     while input != "exit"
-#       puts "\n- To get additional details on any Date listed,".colorize(:yellow).bold
-#       puts "  please enter number of that date.".colorize(:yellow).bold
-#       puts "- To quit this program, type 'exit'.".colorize(:yellow).bold
-#       puts "- What would you like to do?".colorize(:yellow).bold
-#       puts "- Please enter number or 'exit'".colorize(:yellow).bold
-    
-#       input = gets.strip.downcase
-      
-#       if input.to_i.between?(1, UfoSightingsGem::Sighting.all.size)
-#         event = UfoSightingsGem::Sighting.find_date(input)
-#         "Date - #{event.date}City - #{event.city}State - #{event.state}Event - #{event.name}Description - #{event.description}".colorize(:blue).bold.split("").each {|c| putc c ; sleep 0.035}
-#         puts "\nReloading list....".colorize(:yellow).bold
-#         sleep 3 
-#       elsif 
-#         input == "exit"
-#         goodbye
-#       else
-#         "Please enter a valid request, reloading list...".colorize(:red).bold.split("").each {|c| putc c ; sleep 0.025}
-#         puts ""
-#         sleep 1 
-#       end
-#       list_dates
-#     end 
-#   end 
-  
-#   def goodbye 
-#     "\nUntil next time.....".colorize(:yellow).bold.split("").each {|c| putc c ; sleep 0.05}
-#     puts ""
-#     "\nThe  Truth  is  out  there!".colorize(:yellow).bold.split("").each {|c| putc c ; sleep 0.15}
-#     sleep +1
-#     puts ""
-#     exit
-#   end 
-# end 
-
   def menu 
     puts "\n- To get additional details on any Date listed,".colorize(:yellow).bold
     puts "  please enter number of that date.".colorize(:yellow).bold
@@ -87,15 +49,13 @@ class UfoSightingsGem::CLI
     puts "- Please enter number or 'exit'".colorize(:yellow).bold
   end 
   
-  def user_input
+  def input_parser
       input = nil
     while input != "exit"
-     input = gets.strip.downcase
+     input = gets.strip.downcase 
       
       if input.to_i.between?(1, UfoSightingsGem::Sighting.all.size)
-        #event = 
-        UfoSightingsGem::Sighting.find_date(input)
-        sighting_output
+        sighting_output(input.to_i)
       elsif 
         input == "exit"
         goodbye
@@ -105,6 +65,15 @@ class UfoSightingsGem::CLI
     end 
   end 
   
+   def sighting_output(input)
+    event = UfoSightingsGem::Sighting.finder(input)
+    "Date - #{event.date}City - #{event.city}State - #{event.state}Event - #{event.name}Description - #{event.description}".colorize(:blue).bold.split("").each {|c| putc c ; sleep 0.035}
+    puts "\nReloading list....".colorize(:yellow).bold
+    sleep 3
+    list_dates
+    menu
+  end
+  
   def invalid_response
     "Please enter a valid request, reloading list...".colorize(:red).bold.split("").each {|c| putc c ; sleep 0.025}
     puts ""
@@ -112,16 +81,6 @@ class UfoSightingsGem::CLI
     list_dates
     menu
   end 
-  
-  def sighting_output
-    input = nil
-    event = UfoSightingsGem::Sighting.find_date(input)
-    "Date - #{event.date}City - #{event.city}State - #{event.state}Event - #{event.name}Description - #{event.description}".colorize(:blue).bold.split("").each {|c| putc c ; sleep 0.035}
-    puts "\nReloading list....".colorize(:yellow).bold
-    sleep 3
-    list_dates
-    menu
-  end
   
   def goodbye 
     "\nUntil next time.....".colorize(:yellow).bold.split("").each {|c| putc c ; sleep 0.05}

@@ -10,7 +10,6 @@ class UfoSightingsGem::Sighting
     @state = state
     @name = name
     @description = description
-    #@@all << self     #save method?
   end
   
   def save
@@ -26,8 +25,8 @@ class UfoSightingsGem::Sighting
     @@all 
   end 
   
-  def self.find_date(user_input)
-    self.all[user_input.to_i - 1]
+  def self.finder(user_input)
+    self.all[user_input - 1]
   end
 
 end

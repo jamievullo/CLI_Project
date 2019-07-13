@@ -10,7 +10,6 @@ class UfoSightingsGem::Scraper
       row_data = object.css('td')
      
       if row_data[0] != nil && row_data[1] != nil && row_data[3] != nil
-        
         date = row_data[0].text
         city = row_data[1].text
         state = row_data[2].text
