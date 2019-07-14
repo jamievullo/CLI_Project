@@ -5,7 +5,7 @@ class UfoSightingsGem::CLI
     UfoSightingsGem::Scraper.scrape_ufo_info
     list_dates
     menu
-    input_parser
+    input_checker
   end
 
   def intro
@@ -90,4 +90,4 @@ class UfoSightingsGem::CLI
     puts ""
     exit
   end
-end 
+end
