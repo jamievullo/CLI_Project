@@ -1,7 +1,7 @@
 class UfoSightingsGem::CLI
 
   def run
-    intro
+    #intro
     UfoSightingsGem::Scraper.scrape_ufo_info
     list_dates
     menu
@@ -67,7 +67,8 @@ class UfoSightingsGem::CLI
 
    def sighting_output(input)
     event = UfoSightingsGem::Sighting.finder(input)
-    "Date - #{event.date}City - #{event.city}State - #{event.state}Event - #{event.name}Description - #{event.description}".colorize(:blue).bold.split("").each {|c| putc c ; sleep 0.035}
+    "Date - #{event.date}City - #{event.city}State - #{event.state}Event - #{event.name}Description - 
+    #{event.description}".colorize(:blue).bold.split("").each {|c| putc c ; sleep 0.035}
     puts "\nReloading list....".colorize(:yellow).bold
     sleep 3
     list_dates
