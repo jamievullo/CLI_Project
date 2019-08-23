@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
 gem 'pry'
-gem 'nokogiri'
+gem "nokogiri", ">= 1.10.4"
 gem 'colorize'
